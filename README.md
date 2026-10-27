@@ -2,29 +2,30 @@ LinkForge 🔗
 
 A lightweight URL shortener built with Python, FastAPI, and SQLite.
 
-LinkForge turns long URLs into short links and provides a web interface, link history, click statistics, and a command-line interface.
+LinkForge converts long URLs into short links, redirects visitors to the original destinations, and tracks link clicks. It includes a web interface and a command-line interface (CLI).
 
-Features
+✨ Features
 
-- Shorten URLs with randomly generated short codes
-- Redirect short links to their original destinations
-- Track link clicks
-- View saved links and statistics
-- Responsive web interface built with HTML, CSS, and JavaScript
-- Command-line interface (CLI)
-- SQLite database for persistent storage
-- API endpoints powered by FastAPI
+- Generate short links with random codes
+- Redirect short links to their original URLs
+- Track click counts
+- View link history and statistics
+- Responsive web interface
+- Command-line interface
+- SQLite database with automatic initialization
+- FastAPI backend and interactive API documentation
 
-Tech Stack
+🛠️ Tech Stack
 
 - Backend: Python, FastAPI
 - Database: SQLite
 - Frontend: HTML, CSS, JavaScript
 - CLI: Python
+- Version Control: Git and GitHub
 
-Project Structure
+📂 Project Structure
 
-linkforge/
+LinkForge/
 ├── cli/
 │   └── banner.py
 ├── static/
@@ -38,47 +39,66 @@ linkforge/
 ├── .gitignore
 └── README.md
 
-Run Locally
+🚀 Installation
 
-1. Clone the repository
+1. Install prerequisites
 
-git clone YOUR_REPOSITORY_URL
-cd linkforge
+On Termux, install Git and Python:
 
-Replace "YOUR_REPOSITORY_URL" with your actual repository URL.
+pkg update
+pkg install git python
 
-2. Create and activate a virtual environment
+2. Clone the repository
+
+git clone https://github.com/keshavmesta-linux/LinkForge.git
+cd LinkForge
+
+3. Create and activate a virtual environment
 
 python -m venv .venv
 source .venv/bin/activate
 
-3. Install dependencies
+4. Install dependencies
 
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 
-4. Start the server
+5. Start the application
 
 uvicorn main:app --host 127.0.0.1 --port 8000
 
-Open "http://127.0.0.1:8000/" in your browser.
+6. Open LinkForge
 
-Interactive API documentation is available at "http://127.0.0.1:8000/docs".
+Open the following address in your browser:
 
-API Endpoints
+http://127.0.0.1:8000/
 
-Method| Endpoint| Purpose
-GET| "/"| Web interface
-POST| "/api/shorten"| Create a short link
-GET| "/api/links"| View saved links
-GET| "/{short_code}"| Redirect to the original URL
+Interactive API documentation:
 
-Security Notes
+http://127.0.0.1:8000/docs
 
-- The SQLite database and local environment files should not be committed to Git.
-- Use HTTPS and appropriate abuse prevention before deploying publicly.
-- Do not store passwords, API keys, or other secrets in source code.
+Keep the server running while using the application.
 
-Author
+🔌 API Endpoints
+
+Method| Endpoint| Description
+GET| "/"| Displays the web interface
+POST| "/api/shorten"| Creates a short link
+GET| "/api/links"| Returns saved links and click statistics
+GET| "/{short_code}"| Redirects to the original URL
+
+💾 Database
+
+LinkForge initializes its SQLite database automatically when the application starts. Each installation maintains its own database and link records.
+
+The local database file is excluded from Git using ".gitignore".
+
+🔐 Security
+
+- Do not commit databases, credentials, or private configuration files.
+- Review URL validation and abuse prevention before public deployment.
+- Use HTTPS and persistent database storage when deploying a shared public service.
+
+👨‍💻 Author
 
 Keshav Nagaraj Mesta
 
@@ -86,4 +106,4 @@ GitHub: https://github.com/keshavmesta-linux
 
 ---
 
-Built as a Python web development project.
+Built with Python and FastAPI.
