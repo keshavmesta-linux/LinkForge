@@ -1,29 +1,106 @@
-LinkForge 🔗
+⚡ LinkForge
 
-A lightweight URL shortener built with Python, FastAPI, and SQLite.
+🔗 Turn long URLs into short, shareable links.
 
-LinkForge converts long URLs into short links, redirects visitors to the original destinations, and tracks link clicks. It includes a web interface and a command-line interface (CLI).
+LinkForge is a lightweight URL shortener built with Python and FastAPI. Create short links, redirect visitors to original URLs, and track link clicks through a clean web interface.
+
+<p align="center">
+  <strong>🐍 Python · ⚡ FastAPI · 🗄️ SQLite · 🎨 HTML · CSS · JavaScript</strong>
+</p>---
 
 ✨ Features
 
-- Generate short links with random codes
-- Redirect short links to their original URLs
-- Track click counts
-- View link history and statistics
-- Responsive web interface
-- Command-line interface
-- SQLite database with automatic initialization
-- FastAPI backend and interactive API documentation
+- 🔗 URL Shortening — Generate short codes for long URLs.
+- 🚀 Fast Redirects — Redirect users to the original destination.
+- 📊 Click Tracking — Count visits to shortened links.
+- 🖥️ Web Interface — Use LinkForge through your browser.
+- 🔌 REST API — Create and list links through API endpoints.
+- 🗄️ SQLite Database — Store links locally.
+- 📱 Mobile-Friendly Development — Run the project using Termux.
+- 🧩 Open Source Code — Explore the implementation and learn how it works.
+
+---
 
 🛠️ Tech Stack
 
-- Backend: Python, FastAPI
-- Database: SQLite
-- Frontend: HTML, CSS, JavaScript
-- CLI: Python
-- Version Control: Git and GitHub
+Technology| Purpose
+Python| Core programming language
+FastAPI| Web framework and API
+SQLite| Local database
+HTML| Page structure
+CSS| User interface styling
+JavaScript| Frontend interactions
+Uvicorn| ASGI server
 
-📂 Project Structure
+---
+
+📸 Preview
+
+«Run LinkForge locally to explore the interface and create your first short link.»
+
+---
+
+🚀 Installation
+
+1. Install prerequisites
+
+Install Git and Python in Termux.
+```bash
+pkg update
+pkg install git python
+```
+
+2. Clone the repository
+```bash
+git clone https://github.com/keshavmesta-linux/LinkForge.git
+cd LinkForge
+```
+
+3. Create a virtual environment
+```bash
+python -m venv .venv
+```
+
+4. Activate the virtual environment
+```bash
+source .venv/bin/activate
+```
+
+5. Install dependencies
+```bash
+python -m pip install -r requirements.txt
+```
+
+6. Start the application
+```bash
+uvicorn main:app --host 127.0.0.1 --port 8000
+```
+
+7. Open LinkForge
+
+Open your browser and visit:
+
+Web Interface:<b> http://127.0.0.1:8000/</b>
+
+Interactive API Documentation: <b>http://127.0.0.1:8000/docs</b>
+
+Keep the Termux session running while you use the application.
+
+---
+
+🔌 API Endpoints
+
+Method| Endpoint| Description
+"GET"| "/"| Open the web interface
+"POST"| "/api/shorten"| Create a shortened link
+"GET"| "/api/links"| List stored links
+"GET"| "/{short_code}"| Redirect to the destination
+
+Explore request formats and responses through the interactive API documentation at "/docs".
+
+---
+
+📁 Project Structure
 
 LinkForge/
 ├── cli/
@@ -33,77 +110,56 @@ LinkForge/
 │   └── style.css
 ├── templates/
 │   └── index.html
-├── main.py
-├── st.py
-├── requirements.txt
 ├── .gitignore
-└── README.md
+├── main.py
+├── requirements.txt
+├── README.md
+└── st.py
 
-🚀 Installation
+---
 
-1. Install prerequisites
+🗄️ Database
 
-On Termux, install Git and Python:
+LinkForge uses SQLite to store shortened URLs and their click counts.
 
-pkg update
-pkg install git python
+The database file is created locally when the application initializes. Each installation maintains its own database unless a shared database is configured.
 
-2. Clone the repository
+Note: The database file is local application data and is not included in the Git repository.
 
-git clone https://github.com/keshavmesta-linux/LinkForge.git
-cd LinkForge
+---
 
-3. Create and activate a virtual environment
+🔒 Security & Privacy
 
-python -m venv .venv
-source .venv/bin/activate
+- Use HTTPS when deploying a public instance.
+- Validate URLs and protect the service against spam and abuse before public deployment.
+- Do not commit database files, credentials, or environment secrets.
+- Avoid storing sensitive information in shortened URLs.
+- Click counts are basic analytics, not a complete analytics system.
 
-4. Install dependencies
+---
 
-python -m pip install -r requirements.txt
+🗺️ Roadmap
 
-5. Start the application
+- [x] Basic URL shortening
+- [x] Redirect handling
+- [x] Click tracking
+- [x] Web interface
+- [x] REST API
+- [ ] Custom short URLs
+- [ ] QR code generation
+- [ ] Improved analytics
+- [ ] Production deployment
 
-uvicorn main:app --host 127.0.0.1 --port 8000
-
-6. Open LinkForge
-
-Open the following address in your browser:
-
-http://127.0.0.1:8000/
-
-Interactive API documentation:
-
-http://127.0.0.1:8000/docs
-
-Keep the server running while using the application.
-
-🔌 API Endpoints
-
-Method| Endpoint| Description
-GET| "/"| Displays the web interface
-POST| "/api/shorten"| Creates a short link
-GET| "/api/links"| Returns saved links and click statistics
-GET| "/{short_code}"| Redirects to the original URL
-
-💾 Database
-
-LinkForge initializes its SQLite database automatically when the application starts. Each installation maintains its own database and link records.
-
-The local database file is excluded from Git using ".gitignore".
-
-🔐 Security
-
-- Do not commit databases, credentials, or private configuration files.
-- Review URL validation and abuse prevention before public deployment.
-- Use HTTPS and persistent database storage when deploying a shared public service.
+---
 
 👨‍💻 Author
 
 Keshav Nagaraj Mesta
 
-GitHub: https://github.com/keshavmesta-linux
+GitHub: "@keshavmesta-linux" (https://github.com/keshavmesta-linux)
 
 ---
 
-Built with Python and FastAPI.
+<p align="center">
+  ⚡ <strong>LinkForge — Short links. Simple sharing.</strong>
+</p>
