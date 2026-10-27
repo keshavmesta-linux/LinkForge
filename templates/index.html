@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>LinkForge — Smart URL Shortener</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-icon">L</span>
+      <span>LinkForge</span>
+    </a>
+    <span class="status"><span class="status-dot"></span> Your link workspace</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow">SIMPLE. SMART. SHAREABLE.</div>
+      <h1>Long links.<br><span>Short solutions.</span></h1>
+      <p class="subtitle">Create short links, keep them organized, and track clicks in one place.</p>
+    </section>
+
+    <section class="shorten-card">
+      <label for="url-input">Paste your long URL</label>
+      <form id="shorten-form">
+        <div class="input-row">
+          <span class="link-symbol">↗</span>
+          <input id="url-input" type="url" placeholder="https://example.com/your-long-link" required>
+        </div>
+        <button id="shorten-button" type="submit">Create short link <span>→</span></button>
+      </form>
+      <p class="hint">Enter a complete URL starting with https:// or http://</p>
+      <div id="result" class="result hidden" aria-live="polite"></div>
+      <p id="message" class="message" aria-live="polite"></p>
+    </section>
+
+    <section class="stats-grid">
+      <article class="stat-card">
+        <div class="stat-label">TOTAL LINKS</div>
+        <div id="total-links" class="stat-value">—</div>
+        <div class="stat-note">Links created</div>
+      </article>
+      <article class="stat-card">
+        <div class="stat-label">TOTAL CLICKS</div>
+        <div id="total-clicks" class="stat-value">—</div>
+        <div class="stat-note">Tracked redirects</div>
+      </article>
+    </section>
+
+    <section class="history-section">
+      <div class="section-heading">
+        <div>
+          <h2>Your links</h2>
+          <p>Manage your recently created short URLs.</p>
+        </div>
+        <button id="refresh-button" class="refresh-button" type="button">↻ Refresh</button>
+      </div>
+      <div id="history" class="history-list">
+        <div class="empty-state">Loading your links…</div>
+      </div>
+    </section>
+
+    <footer class="developer-footer">
+  <div>LinkForge · Built with FastAPI and SQLite</div>
+  <p>Designed &amp; developed by</p>
+  <strong>Vinay Mesta</strong>
+  <div class="developer-role">Python Developer · Open Source Projects</div>
+  <a href="https://github.com/keshavmesta-linux"
+     target="_blank" rel="noopener noreferrer">
+    <span aria-hidden="true">↗</span> GitHub Profile
+  </a>
+</footer>
+  </main>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
