@@ -92,9 +92,10 @@ Keep the Termux session running while you use the application.
 
 Method| Endpoint| Description
 "GET"| "/"| Open the web interface
-"POST"| "/api/shorten"| Create a shortened link
-"GET"| "/api/links"| List stored links
-"GET"| "/{short_code}"| Redirect to the destination
+<br>
+"POST"| "/api/shorten"| Create a shortened link<br>
+"GET"| "/api/links"| List stored links<br>
+"GET"| "/{short_code}"| Redirect to the destination<br>
 
 Explore request formats and responses through the interactive API documentation at "/docs".
 
